@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ae20b5334d8b840968419b835aad7b, type: 3}
+  m_Name: MasBudiNPCDialogue
+  m_EditorClassIdentifier: 
+  npcName: Mas Budi
+  npcTitleName: Mas Budi - Pemuda Desa
+  npcPotrait: {fileID: 8288426215254106694, guid: dfa7e19ea003ad544931ee6019b59194, type: 3}
+  dialogueLines:
+  - Wah ada anak kota disini
+  - Mau kemana toh dek?
+  - Oh yo wes, hati hati ya
+  - nanti coba kerumah saya saja ya
+  - dekat kok, diujung jalan sana
+  - nanti tak ajak jalan jalan
+  autoProgressLines: 010101010101
+  endDialogueLines: 000001000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  choices:
+  - dialogueIndex: 1
+    choices:
+    - Keliling keliling aja pak
+    - Ga tau nih pak
+    nextDialogueIndexes: 0200000003000000

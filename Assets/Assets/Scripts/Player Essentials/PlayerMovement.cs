@@ -4,39 +4,55 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;       // Horizontal movement speed
-    public float jumpForce = 12f;      // Jump strength
-    public float groundCheckRadius = 0.2f; // Radius for ground detection
+    public float walkSpeed = 5f;
+    public float runSpeed = 10f;
+    public float jumpForce = 12f;
+    public float groundCheckRadius = 0.2f;
 
     [Header("Ground Detection")]
-    public Transform groundCheck;      // Empty GameObject at player's feet
-    public LayerMask groundLayer;      // Layer for ground objects
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
+    [Header("Animation")]
+    public Animator animator;
 
     private Rigidbody2D rb;
     private float moveInput;
     private bool isGrounded;
     private bool facingRight = true;
+    private float currentSpeed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentSpeed = walkSpeed;
     }
 
     void Update()
     {
-        // Get horizontal input (-1 to 1)
+        // Input horizontal
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Check if player is on the ground
+        // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // Jump when space is pressed and player is grounded
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
+        // === RUN / WALK LOGIC ===
+        bool isRunning = Input.GetKey(KeyCode.LeftShift) && moveInput != 0;
 
-        // Flip player sprite when changing direction
+        if (isRunning)
+            currentSpeed = runSpeed;
+        else
+            currentSpeed = walkSpeed;
+
+        // === ANIMATION (SINGLE PARAMETER) ===
+        float speedValue = Mathf.Abs(moveInput);
+
+        if (isRunning)
+            speedValue *= 2f; // supaya beda antara jalan & lari
+
+        animator.SetFloat("speed", speedValue);
+
+        // === FLIP CHARACTER ===
         if (facingRight && moveInput < 0)
             Flip();
         else if (!facingRight && moveInput > 0)
@@ -45,8 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Apply horizontal movement
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        // Apply movement
+        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
     }
 
     void Flip()
@@ -57,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = scaler;
     }
 
-    // Draw ground check radius in editor
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)

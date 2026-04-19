@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ae20b5334d8b840968419b835aad7b, type: 3}
+  m_Name: PakHarjoNPCDialogue
+  m_EditorClassIdentifier: 
+  npcName: Pak Harjo
+  npcPotrait: {fileID: -7533783761039728747, guid: 03fb7212ef219804cb74b835a3764d69, type: 3}
+  dialogueLines:
+  - Hai nak, lagi sibuk?
+  - Oh yasudah kalo gitu, lain kali saja
+  - kalo kamu free ke rumah saya ya nak
+  - Tolong bantu saya ya angkat cart buah
+  - Cartnya ada di pintu masuk desa, ambil saja ya
+  autoProgressLines: 0101000100
+  endDialogueLines: 0000010001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  choices:
+  - dialogueIndex: 0
+    choices:
+    - Lumayan sih pak..
+    - Engga pak. kenapa?
+    nextDialogueIndexes: 0100000003000000
