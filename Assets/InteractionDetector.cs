@@ -1,3 +1,4 @@
+// InteractionDetector.cs
 using UnityEngine;
 
 public class InteractionDetector : MonoBehaviour
@@ -12,19 +13,22 @@ public class InteractionDetector : MonoBehaviour
 
     void Update()
     {
-        // Press E to interact
-        if (Input.GetKeyDown(KeyCode.E))
+        if (interactableInRange != null)
+            interactionIcon.SetActive(interactableInRange.CanInteract());
+
+        if (Input.GetKeyDown(KeyCode.E) && interactableInRange != null)
         {
-            interactableInRange?.Interact();
+            if (interactableInRange.CanInteract())
+                interactableInRange.Interact();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent(out Iinteractable interactable) && interactable.CanInteract())
+        if (other.TryGetComponent(out Iinteractable interactable))
         {
             interactableInRange = interactable;
-            interactionIcon.SetActive(true);
+            interactionIcon.SetActive(interactable.CanInteract());
         }
     }
 
@@ -35,5 +39,12 @@ public class InteractionDetector : MonoBehaviour
             interactableInRange = null;
             interactionIcon.SetActive(false);
         }
+    }
+
+    // ✅ FIX 2: Reset detector saat teleport agar portal baru bisa ke-detect
+    public void ResetDetector()
+    {
+        interactableInRange = null;
+        interactionIcon.SetActive(false);
     }
 }

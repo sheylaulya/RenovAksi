@@ -1,7 +1,8 @@
+// PortalTrigger.cs
 using UnityEngine;
 using System.Collections.Generic;
 
-public class PortalTrigger : MonoBehaviour
+public class PortalTrigger : MonoBehaviour, Iinteractable
 {
     [Header("Portal Settings")]
     public string portalDisplayName = "Mystic Portal";
@@ -12,15 +13,31 @@ public class PortalTrigger : MonoBehaviour
 
     private float lastTeleportTime = -Mathf.Infinity;
     private bool playerInRange = false;
-    private GameObject playerInTrigger;
+    private Transform playerTransform;
+    public GameObject tutorialPanel;
+    private static bool sudahPernahBuka = false;
+
+    public bool CanInteract() => CanTeleport() && playerInRange;
+
+    public void Interact()
+    {
+
+        if (!sudahPernahBuka)
+        {
+            tutorialPanel.SetActive(true);
+            sudahPernahBuka = true;
+        }
+
+        if (playerTransform == null) return;
+        TeleportUI.Instance.ShowUI(this, playerTransform);
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
-            playerInTrigger = collision.gameObject;
-            TeleportUI.Instance.ShowUI(this, collision.transform);
+            playerTransform = collision.transform;
         }
     }
 
@@ -29,35 +46,31 @@ public class PortalTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            playerInTrigger = null;
-            TeleportUI.Instance.HideUI(); // This now also clears buttons
+            playerTransform = null;
+            TeleportUI.Instance.HideUI();
+            tutorialPanel.SetActive(false);
+
         }
     }
 
-    public bool CanTeleport()
-    {
-        return Time.time >= lastTeleportTime + cooldown;
-    }
+    public bool CanTeleport() => Time.time >= lastTeleportTime + cooldown;
 
+    // PortalTrigger.cs — update Teleport() untuk panggil ResetDetector
     public void Teleport(Transform player, PortalDestination dest)
     {
         if (!CanTeleport()) return;
 
         lastTeleportTime = Time.time;
+
+        // Reset detector SEBELUM pindah posisi
+        var detector = player.GetComponentInChildren<InteractionDetector>();
+        detector?.ResetDetector();
+
         player.position = dest.arrivalPoint.position;
+
+        // Paksa Unity re-evaluasi semua trigger setelah teleport
+        Physics2D.SyncTransforms();
+
         TeleportUI.Instance.HideUI();
-
-        // Brief cooldown visual feedback (optional)
-        StartCoroutine(CooldownRoutine());
-    }
-
-    private System.Collections.IEnumerator CooldownRoutine()
-    {
-        yield return new WaitForSeconds(cooldown);
-        // Re-show UI if player is still in range
-        if (playerInRange && playerInTrigger != null)
-        {
-            TeleportUI.Instance.ShowUI(this, playerInTrigger.transform);
-        }
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MasBudiQuestSTart
   m_EditorClassIdentifier: 
   npcName: Mas Budi
-  npcTitleName: 'Mas Budi - '
+  npcTitleName: Mas Budi - Pemuda Desa
   npcPotrait: {fileID: 8288426215254106694, guid: dfa7e19ea003ad544931ee6019b59194, type: 3}
   dialogueLines:
   - Kenalkan saya Budi, saya yang punya tambak diujung jalan sana
@@ -34,7 +34,7 @@ MonoBehaviour:
     choiceTypes: 0000000000000000
   - dialogueIndex: 3
     choices:
-    - Terima Tugas
-    - Tolak Tugas
+    - Boleh deh pak (Terima Tugas)
+    - Mungkin nanti deh pak (Tolak Tugas)
     nextDialogueIndexes: 0400000002000000
     choiceTypes: 010000000200000003000000
