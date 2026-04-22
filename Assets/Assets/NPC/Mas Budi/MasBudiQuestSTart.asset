@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ae20b5334d8b840968419b835aad7b, type: 3}
+  m_Name: MasBudiQuestSTart
+  m_EditorClassIdentifier: 
+  npcName: Mas Budi
+  npcTitleName: 'Mas Budi - '
+  npcPotrait: {fileID: 8288426215254106694, guid: dfa7e19ea003ad544931ee6019b59194, type: 3}
+  dialogueLines:
+  - Kenalkan saya Budi, saya yang punya tambak diujung jalan sana
+  - Sudah lihat lihat desa?
+  - Oh yasudah kalau begitu, kapan kapan kita ngobrol lagi ya
+  - Wala we, yaudah gimana kalo kamu keliling keliling dulu?
+  - Oke, nanti temui saya saja ya kalo sudah selesai keliling lilingnya
+  autoProgressLines: 0101010100
+  endDialogueLines: 0000010001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  choices:
+  - dialogueIndex: 1
+    choices:
+    - Sudah Pak
+    - Belum Pak
+    nextDialogueIndexes: 0200000003000000
+    choiceTypes: 0000000000000000
+  - dialogueIndex: 3
+    choices:
+    - Terima Tugas
+    - Tolak Tugas
+    nextDialogueIndexes: 0400000002000000
+    choiceTypes: 010000000200000003000000

@@ -1,14 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class NPC : MonoBehaviour, Iinteractable
 {
-    public NPCDialogue dialogueData;
+    public bool givesQuest;
+    public QuestData questData;
+
+    public NPCDialogue startDialogueData;
+    public NPCDialogue inProgressDialogueData;
+    public NPCDialogue completedDialogueData;
+
+    private NPCDialogue dialogueData;
     private DialogueController dialogUI;
+
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
 
@@ -16,6 +20,36 @@ public class NPC : MonoBehaviour, Iinteractable
     {
         dialogUI = DialogueController.instance;
     }
+
+    void Update()
+    {
+        if (!isDialogueActive) return;
+
+        if (dialogUI.questPreviewPanel.activeSelf) return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            HandleInput();
+        }
+    }
+
+    void HandleInput()
+    {
+        // Kalau ada choices aktif, space diabaikan
+        if (dialogUI.choiceContainer.childCount > 0) return;
+
+        if (isTyping)
+        {
+            StopAllCoroutines();
+            dialogUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
+            isTyping = false;
+        }
+        else
+        {
+            nextLine();
+        }
+    }
+
     public bool CanInteract()
     {
         return !isDialogueActive;
@@ -23,27 +57,65 @@ public class NPC : MonoBehaviour, Iinteractable
 
     public void Interact()
     {
-        if (dialogueData == null)
+        if (givesQuest)
         {
-            return;
-        }
-        if (isDialogueActive)
-        {
-            nextLine();
+            HandleQuestDialogue();
         }
         else
         {
-            startDialogue();
+            StartDialogueWithData(startDialogueData);
         }
+    }
+
+    void HandleQuestDialogue()
+    {
+        if (QuestManager.instance == null)
+        {
+            Debug.LogError("QuestManager belum ada di scene!");
+            return;
+        }
+
+        if (questData == null)
+        {
+            Debug.LogError("QuestData belum di-assign di NPC!");
+            return;
+        }
+
+        var state = QuestManager.instance.GetQuestState(questData);
+
+        switch (state)
+        {
+            case QuestState.NotStarted:
+            case QuestState.Declined:
+                Debug.Log("SHOW START DIALOGUE");
+                StartDialogueWithData(startDialogueData);
+                break;
+
+            case QuestState.InProgress:
+                Debug.Log("QUEST MASIH BERJALAN");
+                break;
+
+            case QuestState.Completed:
+                Debug.Log("QUEST SUDAH SELESAI");
+                break;
+        }
+    }
+
+    void StartDialogueWithData(NPCDialogue data)
+    {
+        dialogueData = data;
+        startDialogue();
     }
 
     void startDialogue()
     {
-        Debug.Log(dialogUI);
-        Debug.Log(dialogueData);
-        Debug.Log(dialogueData.dialogueLines);
+        Debug.Log("Start Dialogue Dipanggil");
+
         isDialogueActive = true;
         dialogueIndex = 0;
+
+        dialogUI.SetPreviewButton(false);
+        if (givesQuest) dialogUI.SetCurrentQuest(questData);
 
         dialogUI.SetNPCInfo(
             dialogueData.npcName,
@@ -52,14 +124,14 @@ public class NPC : MonoBehaviour, Iinteractable
         );
 
         dialogUI.showDialogueUI(true);
-
         displayCurrentLine();
-        StartCoroutine(TypeLine());
     }
 
     void nextLine()
     {
-        Debug.Log("Current Index: " + dialogueIndex);
+        dialogUI.questPreviewPanel.SetActive(false);
+        dialogUI.SetPreviewButton(false);
+
         if (isTyping)
         {
             StopAllCoroutines();
@@ -105,12 +177,12 @@ public class NPC : MonoBehaviour, Iinteractable
         {
             currentText += letter;
             dialogUI.SetDialogueText(currentText);
-
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
         isTyping = false;
 
+        // 🔥 auto progress tetap jalan
         if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
         {
             yield return new WaitForSeconds(dialogueData.autoProgressDelay);
@@ -119,23 +191,79 @@ public class NPC : MonoBehaviour, Iinteractable
     }
     void DisplayChoices(DialogueChoice choice)
     {
-        for (var i = 0; i < choice.choices.Length; i++)
+
+        Debug.Log("Choices: " + choice.choices.Length);
+        Debug.Log("NextIndex: " + choice.nextDialogueIndexes.Length);
+        Debug.Log("Types: " + choice.choiceTypes.Length);
+
+        bool hasPreviewQuest = System.Array.Exists(choice.choiceTypes, t => t == ChoiceType.PreviewQuest);
+        dialogUI.SetPreviewButton(givesQuest && hasPreviewQuest);
+
+        for (int i = 0; i < choice.choices.Length; i++)
         {
             int nextIndex = choice.nextDialogueIndexes[i];
-            dialogUI.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex));
+            ChoiceType type = choice.choiceTypes[i];
+
+            if (type == ChoiceType.PreviewQuest)
+            {
+                dialogUI.CreateChoiceButton(
+                    choice.choices[i],
+                    () => ToggleQuestPreview()
+                );
+            }
+            else
+            {
+                dialogUI.CreateChoiceButton(
+                    choice.choices[i],
+                    () => ChooseOption(nextIndex, type)
+                );
+            }
+        }
+    }
+    void ToggleQuestPreview()
+    {
+        bool isActive = dialogUI.questPreviewPanel.activeSelf;
+
+        dialogUI.questPreviewPanel.SetActive(!isActive);
+
+        if (!isActive)
+        {
+            dialogUI.SetQuestPreviewData(questData);
         }
     }
 
-    void ChooseOption(int nextIndex)
+    void ChooseOption(int nextIndex, ChoiceType type)
     {
+        dialogUI.questPreviewPanel.SetActive(false);
         StopAllCoroutines();
         dialogUI.ClearChoices();
 
-        // 🔥 tampilkan player dulu
+        if (givesQuest)
+        {
+            if (type == ChoiceType.AcceptQuest)
+                QuestManager.instance.AcceptQuest(questData);
+            else if (type == ChoiceType.DeclineQuest)
+                QuestManager.instance.DeclineQuest(questData);
+        }
+
         dialogUI.SetPlayerInfo();
         dialogUI.SetDialogueText(GetChoiceText(nextIndex));
 
         StartCoroutine(ContinueToNPC(nextIndex));
+    }
+
+    IEnumerator ContinueToNPC(int nextIndex)
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        dialogUI.SetNPCInfo(
+            dialogueData.npcName,
+            dialogueData.npcTitleName,
+            dialogueData.npcPotrait
+        );
+
+        dialogueIndex = nextIndex;
+        displayCurrentLine();
     }
 
     string GetChoiceText(int nextIndex)
@@ -145,27 +273,10 @@ public class NPC : MonoBehaviour, Iinteractable
             for (int i = 0; i < choice.nextDialogueIndexes.Length; i++)
             {
                 if (choice.nextDialogueIndexes[i] == nextIndex)
-                {
                     return choice.choices[i];
-                }
             }
         }
         return "";
-    }
-
-    IEnumerator ContinueToNPC(int nextIndex)
-    {
-        yield return new WaitForSeconds(1.5f); // delay biar keliatan player ngomong
-
-        // balik ke NPC
-        dialogUI.SetNPCInfo(
-            dialogueData.npcName,
-            dialogueData.npcTitleName,
-            dialogueData.npcPotrait
-        );
-
-        dialogueIndex = nextIndex;
-        displayCurrentLine();
     }
 
     void displayCurrentLine()
@@ -181,5 +292,7 @@ public class NPC : MonoBehaviour, Iinteractable
         dialogUI.SetDialogueText("");
         dialogUI.showDialogueUI(false);
 
+        dialogUI.SetPreviewButton(false);
+        dialogUI.questPreviewPanel.SetActive(false);
     }
 }

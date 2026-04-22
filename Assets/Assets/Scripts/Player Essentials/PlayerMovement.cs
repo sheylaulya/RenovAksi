@@ -30,25 +30,59 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Input horizontal
-        moveInput = Input.GetAxisRaw("Horizontal");
+        float move = 0f;
 
-        // Ground check
+        // === INPUT LEFT ===
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            if (InputManager.Instance == null || InputManager.Instance.IsAllowed(InputType.MoveLeft))
+            {
+                move = -1;
+
+                if (TutorialManager.Instance != null)
+                    TutorialManager.Instance.ReportInput(InputType.MoveLeft);
+            }
+        }
+
+        // === INPUT RIGHT ===
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            if (InputManager.Instance == null || InputManager.Instance.IsAllowed(InputType.MoveRight))
+            {
+                move = 1;
+
+                if (TutorialManager.Instance != null)
+                    TutorialManager.Instance.ReportInput(InputType.MoveRight);
+            }
+        }
+
+        moveInput = move;
+
+        // === GROUND CHECK ===
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // === RUN / WALK LOGIC ===
-        bool isRunning = Input.GetKey(KeyCode.LeftShift) && moveInput != 0;
+        // === RUN LOGIC ===
+        bool runPressed = Input.GetKey(KeyCode.LeftShift);
+
+        bool isRunning = runPressed && moveInput != 0 &&
+                         (InputManager.Instance == null || InputManager.Instance.IsAllowed(InputType.Run));
+
+        if (runPressed && (InputManager.Instance == null || InputManager.Instance.IsAllowed(InputType.Run)))
+        {
+            if (TutorialManager.Instance != null)
+                TutorialManager.Instance.ReportInput(InputType.Run);
+        }
 
         if (isRunning)
             currentSpeed = runSpeed;
         else
             currentSpeed = walkSpeed;
 
-        // === ANIMATION (SINGLE PARAMETER) ===
+        // === ANIMATION ===
         float speedValue = Mathf.Abs(moveInput);
 
         if (isRunning)
-            speedValue *= 2f; // supaya beda antara jalan & lari
+            speedValue *= 2f;
 
         animator.SetFloat("speed", speedValue);
 
@@ -61,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Apply movement
         rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
     }
 

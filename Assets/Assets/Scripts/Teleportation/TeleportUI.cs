@@ -46,7 +46,7 @@ public class TeleportUI : MonoBehaviour
         currentPortal = portal;
         currentPlayer = player;
 
-        titleText.text = "Kamu berada di " + portal.portalDisplayName;
+        titleText.text = portal.portalDisplayName;
 
         foreach (var dest in portal.destinations)
         {
