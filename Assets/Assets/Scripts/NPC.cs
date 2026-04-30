@@ -15,12 +15,27 @@ public class NPC : MonoBehaviour, Iinteractable
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
+    private Collider npcCollider;
 
-    private void Start()
+    void Start()
     {
         dialogUI = DialogueController.instance;
+        npcCollider = GetComponent<Collider>();
+
+        CheckQuestState();
     }
 
+    void CheckQuestState()
+    {
+        if (!givesQuest || questData == null) return;
+
+        var state = QuestManager.instance.GetQuestState(questData);
+
+        if (state == QuestState.InProgress || state == QuestState.Completed)
+        {
+            npcCollider.enabled = false;
+        }
+    }
     void Update()
     {
         if (!isDialogueActive) return;
@@ -52,7 +67,18 @@ public class NPC : MonoBehaviour, Iinteractable
 
     public bool CanInteract()
     {
-        return !isDialogueActive;
+        if (isDialogueActive) return false;
+
+        if (givesQuest && questData != null)
+        {
+            var state = QuestManager.instance.GetQuestState(questData);
+
+            // ❌ gak bisa interact kalau udah accept
+            if (state == QuestState.InProgress || state == QuestState.Completed)
+                return false;
+        }
+
+        return true;
     }
 
     public void Interact()
@@ -232,6 +258,7 @@ public class NPC : MonoBehaviour, Iinteractable
         }
     }
 
+    [System.Obsolete]
     void ChooseOption(int nextIndex, ChoiceType type)
     {
         dialogUI.questPreviewPanel.SetActive(false);
@@ -241,7 +268,13 @@ public class NPC : MonoBehaviour, Iinteractable
         if (givesQuest)
         {
             if (type == ChoiceType.AcceptQuest)
+            {
                 QuestManager.instance.AcceptQuest(questData);
+
+                SaveController save = FindObjectOfType<SaveController>();
+                save.SaveGame();
+                Debug.Log("SAVE DIPANGGIL");
+            }
             else if (type == ChoiceType.DeclineQuest)
                 QuestManager.instance.DeclineQuest(questData);
         }

@@ -32,11 +32,9 @@ public class DialogueController : MonoBehaviour
         if (instance == null) instance = this;
         else Destroy(gameObject);
 
-        // 🔥 PINDAH KE SINI
         dialoguePanel.SetActive(false);
         previewButton.SetActive(false);
         questPreviewPanel.SetActive(false);
-
 
         Debug.Log("DialogueController Awake");
         previewButton.SetActive(false);
