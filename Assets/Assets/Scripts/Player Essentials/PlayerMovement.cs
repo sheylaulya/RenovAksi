@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+
         moveInput = move;
 
         // === GROUND CHECK ===

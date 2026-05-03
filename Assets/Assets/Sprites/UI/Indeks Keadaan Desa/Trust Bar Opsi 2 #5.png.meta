@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a22d75699a0edf348a6ae148d27ad60b
+guid: 20bfae59c20545a428a6a2236114f090
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7235485908276176410
-    second: lampiuhh_0
+      213: 2440263600083062204
+    second: Trust Bar Opsi 2 #5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lampiuhh_0
+      name: Trust Bar Opsi 2 #5_0
       rect:
         serializedVersion: 2
-        x: 154
-        y: 21
-        width: 247
-        height: 504
+        x: 1043
+        y: 234
+        width: 84
+        height: 724
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a16652c291c996460800000000000000
-      internalID: 7235485908276176410
+      spriteID: cbd4441b0de8dd120800000000000000
+      internalID: 2440263600083062204
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Trust Bar Opsi 2 #5_0: 2440263600083062204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

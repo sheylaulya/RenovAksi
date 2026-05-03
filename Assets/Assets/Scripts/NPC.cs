@@ -279,6 +279,18 @@ public class NPC : MonoBehaviour, Iinteractable
                 QuestManager.instance.DeclineQuest(questData);
         }
 
+        if (IndexManager.instance != null)
+        {
+            if (type == ChoiceType.GoodAction)
+            {
+                IndexManager.instance.social.AddTrust("Warga", 5f);
+            }
+            else if (type == ChoiceType.BadAction)
+            {
+                IndexManager.instance.social.AddTrust("Warga", -5f);
+            }
+        }
+
         dialogUI.SetPlayerInfo();
         dialogUI.SetDialogueText(GetChoiceText(nextIndex));
 

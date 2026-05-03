@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 54ab7a8ea9a86844ca549964284193b0
+guid: b2b5a22f9e15f0847bf2da45c78919e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8243403993389496790
-    second: fake main menu_0
+      213: 1395994651939992283
+    second: Mungkin kepake_0
+  - first:
+      213: -5072633065035212006
+    second: Mungkin kepake_1
+  - first:
+      213: -7521643517923721984
+    second: Mungkin kepake_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fake main menu_0
+      name: Mungkin kepake_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1068
-        height: 558
+        x: 185
+        y: 455
+        width: 489
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d9740ea144766270800000000000000
-      internalID: 8243403993389496790
+      spriteID: bd27a395db19f5310800000000000000
+      internalID: 1395994651939992283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mungkin kepake_1
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 455
+        width: 560
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1bdca27a136a99b0800000000000000
+      internalID: -5072633065035212006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mungkin kepake_2
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 456
+        width: 362
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d79036211cd9790800000000000000
+      internalID: -7521643517923721984
       vertices: []
       indices: 
       edges: []
@@ -151,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mungkin kepake_0: 1395994651939992283
+      Mungkin kepake_1: -5072633065035212006
+      Mungkin kepake_2: -7521643517923721984
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

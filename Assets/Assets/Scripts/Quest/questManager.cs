@@ -13,6 +13,20 @@ public class QuestManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            Debug.Log("TEST QUEST COMPLETE");
+
+            foreach (var q in questDictionary.Values)
+            {
+                CompleteQuest(q.data);
+                break;
+            }
+        }
+    }
+
     public QuestInstance GetQuest(QuestData data)
     {
         if (!questDictionary.ContainsKey(data.questID))
@@ -47,6 +61,12 @@ public class QuestManager : MonoBehaviour
         var quest = GetQuest(data);
         quest.state = QuestState.Completed;
         Debug.Log("Quest Completed: " + data.questName);
+        Debug.Log($"Quest {quest.data.questName} impact: {quest.data.impact.environment}");
+        if (IndexManager.instance != null)
+        {
+
+            IndexManager.instance.social.AddTrust("Warga", data.impact.social);
+        }
     }
 
     public List<QuestSaveData> GetSaveData()

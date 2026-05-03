@@ -7,6 +7,8 @@ using UnityEngine.Rendering;
 
 public class DayTimeCycle : MonoBehaviour
 {
+    public WaterSystem waterSystem;
+
     [Header("UI")]
     public TextMeshProUGUI timeDisplay;
     public TextMeshProUGUI dayDisplay;
@@ -74,6 +76,9 @@ public class DayTimeCycle : MonoBehaviour
         {
             hours = 0;
             days += 1;
+
+            if (waterSystem != null)
+                waterSystem.UpdateWaterDaily(this);
         }
 
         ControlPPV();

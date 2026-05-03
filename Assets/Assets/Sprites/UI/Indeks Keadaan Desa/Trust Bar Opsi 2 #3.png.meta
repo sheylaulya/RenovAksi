@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0b1befcfc5576e6439e0538cabb006cf
+guid: 81b85403d51460345b59b50d6f302568
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3678682521917268279
-    second: home gembel_0
+      213: 5519487737301836148
+    second: Trust Bar Opsi 2 #3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: home gembel_0
+      name: Trust Bar Opsi 2 #3_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 106
-        width: 548
-        height: 360
+        x: 766
+        y: 92
+        width: 97
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9cedeaf9cb1b2fcc0800000000000000
-      internalID: -3678682521917268279
+      spriteID: 47120048ad8299c40800000000000000
+      internalID: 5519487737301836148
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Trust Bar Opsi 2 #3_0: 5519487737301836148
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
