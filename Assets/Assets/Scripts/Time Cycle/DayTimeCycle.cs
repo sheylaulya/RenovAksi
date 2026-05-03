@@ -31,6 +31,9 @@ public class DayTimeCycle : MonoBehaviour
     [Header("Lights")]
     public bool activateLights;
     public GameObject[] lights;
+    [Header("Sky Group")]
+    public Transform daySky;
+    public Transform nightSky;
 
     void Start()
     {
@@ -89,6 +92,7 @@ public class DayTimeCycle : MonoBehaviour
     // =========================
     public void ControlPPV()
     {
+
         float time = hours + mins / 60f;
         float dayFactor = 0f;
 
@@ -137,6 +141,35 @@ public class DayTimeCycle : MonoBehaviour
 
         // Apply brightness
         ppv.weight = 1 - dayFactor;
+
+        UpdateSkyGroup(dayFactor);
+    }
+
+    void UpdateSkyGroup(float dayFactor)
+    {
+        // Day Sky Fade In
+        foreach (Transform child in daySky)
+        {
+            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                Color c = sr.color;
+                c.a = dayFactor;
+                sr.color = c;
+            }
+        }
+
+        // Night Sky Fade Out
+        foreach (Transform child in nightSky)
+        {
+            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                Color c = sr.color;
+                c.a = 1f - dayFactor;
+                sr.color = c;
+            }
+        }
     }
 
     void ToggleLights(bool state)

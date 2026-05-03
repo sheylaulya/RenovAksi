@@ -15,11 +15,8 @@ public class SocialSystem : MonoBehaviour
     public float Value;
     void Update()
     {
-        float wave = Mathf.Sin(Time.time * 0.7f);
-        float noise = Random.Range(-5f, 5f);
-
-        Value = Mathf.Lerp(30f, 90f, (wave + 1f) / 2f) + noise;
-        Value = Mathf.Clamp(Value, 0, 100);
+        float wave = Mathf.Sin(Time.time * 0.2f);
+        Value = Mathf.Lerp(40f, 80f, (wave + 1f) / 2f);
     }
 
     public void AddTrust(string groupName, float amount)
