@@ -69,7 +69,6 @@ public class TeleportUI : MonoBehaviour
 
     public void HideUI()
     {
-        // Always destroy spawned buttons on hide
         foreach (var btn in spawnedButtons)
         {
             if (btn != null) Destroy(btn);

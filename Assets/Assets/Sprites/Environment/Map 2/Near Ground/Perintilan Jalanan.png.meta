@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 969a48295aa65d5458dc5986af389125
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4617117233332949360
+    second: Perintilan Jalanan_0
+  - first:
+      213: -7170434929241955330
+    second: Perintilan Jalanan_1
+  - first:
+      213: 972648376748386642
+    second: Perintilan Jalanan_2
+  - first:
+      213: 5374573954134515818
+    second: Perintilan Jalanan_3
+  - first:
+      213: 1742248029989715247
+    second: Perintilan Jalanan_4
+  - first:
+      213: -7503038502713575347
+    second: Perintilan Jalanan_5
+  - first:
+      213: 416810313395765473
+    second: Perintilan Jalanan_6
+  - first:
+      213: 4631760733281213873
+    second: Perintilan Jalanan_7
+  - first:
+      213: 8987381885530992909
+    second: Perintilan Jalanan_8
+  - first:
+      213: -3737759304263852717
+    second: Perintilan Jalanan_9
+  - first:
+      213: -3864986750019240464
+    second: Perintilan Jalanan_10
+  - first:
+      213: 4486172776237814110
+    second: Perintilan Jalanan_11
+  - first:
+      213: -5236095942060019251
+    second: Perintilan Jalanan_12
+  - first:
+      213: 7655505481448586853
+    second: Perintilan Jalanan_13
+  - first:
+      213: -9121717356619629961
+    second: Perintilan Jalanan_14
+  - first:
+      213: 7406515031985257979
+    second: Perintilan Jalanan_15
+  - first:
+      213: 7746402344232145724
+    second: Perintilan Jalanan_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Perintilan Jalanan_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 395
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071152349ab431040800000000000000
+      internalID: 4617117233332949360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_1
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 135
+        width: 71
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3ea752c6f7d7c90800000000000000
+      internalID: -7170434929241955330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_2
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 136
+        width: 771
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 259a27b9b8a8f7d00800000000000000
+      internalID: 972648376748386642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_3
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 137
+        width: 216
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a60214b1982569a40800000000000000
+      internalID: 5374573954134515818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_4
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 138
+        width: 281
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d392a3a55bd2810800000000000000
+      internalID: 1742248029989715247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_5
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 139
+        width: 560
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48bdad0c3adfd790800000000000000
+      internalID: -7503038502713575347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_6
+      rect:
+        serializedVersion: 2
+        x: 2786
+        y: 141
+        width: 352
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e08cac85cec8c500800000000000000
+      internalID: 416810313395765473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_7
+      rect:
+        serializedVersion: 2
+        x: 3167
+        y: 143
+        width: 422
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd54d7c8d1574040800000000000000
+      internalID: 4631760733281213873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_8
+      rect:
+        serializedVersion: 2
+        x: 3596
+        y: 143
+        width: 508
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d01fadb253899bc70800000000000000
+      internalID: 8987381885530992909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_9
+      rect:
+        serializedVersion: 2
+        x: 4111
+        y: 143
+        width: 422
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d117d57bfc02cc0800000000000000
+      internalID: -3737759304263852717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_10
+      rect:
+        serializedVersion: 2
+        x: 4562
+        y: 141
+        width: 352
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fdf287470fcc5ac0800000000000000
+      internalID: -3864986750019240464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_11
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 139
+        width: 560
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e51dea80f56124e30800000000000000
+      internalID: 4486172776237814110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_12
+      rect:
+        serializedVersion: 2
+        x: 5798
+        y: 138
+        width: 281
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1f5a39b76a557b0800000000000000
+      internalID: -5236095942060019251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_13
+      rect:
+        serializedVersion: 2
+        x: 6224
+        y: 137
+        width: 216
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e7ccdbca1dd3a60800000000000000
+      internalID: 7655505481448586853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_14
+      rect:
+        serializedVersion: 2
+        x: 6457
+        y: 136
+        width: 771
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77afb21a466296180800000000000000
+      internalID: -9121717356619629961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_15
+      rect:
+        serializedVersion: 2
+        x: 7233
+        y: 135
+        width: 71
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd72112e2a39c660800000000000000
+      internalID: 7406515031985257979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perintilan Jalanan_16
+      rect:
+        serializedVersion: 2
+        x: 7305
+        y: 135
+        width: 375
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33d53fc3efb08b60800000000000000
+      internalID: 7746402344232145724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Perintilan Jalanan_0: 4617117233332949360
+      Perintilan Jalanan_1: -7170434929241955330
+      Perintilan Jalanan_10: -3864986750019240464
+      Perintilan Jalanan_11: 4486172776237814110
+      Perintilan Jalanan_12: -5236095942060019251
+      Perintilan Jalanan_13: 7655505481448586853
+      Perintilan Jalanan_14: -9121717356619629961
+      Perintilan Jalanan_15: 7406515031985257979
+      Perintilan Jalanan_16: 7746402344232145724
+      Perintilan Jalanan_2: 972648376748386642
+      Perintilan Jalanan_3: 5374573954134515818
+      Perintilan Jalanan_4: 1742248029989715247
+      Perintilan Jalanan_5: -7503038502713575347
+      Perintilan Jalanan_6: 416810313395765473
+      Perintilan Jalanan_7: 4631760733281213873
+      Perintilan Jalanan_8: 8987381885530992909
+      Perintilan Jalanan_9: -3737759304263852717
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
