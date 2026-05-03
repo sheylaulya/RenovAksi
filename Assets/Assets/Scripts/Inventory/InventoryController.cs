@@ -30,12 +30,17 @@ public class inventoryController : MonoBehaviour
         {
             Slot slot = slotTransform.GetComponent<Slot>();
 
-            // 👇 TAMBAHIN DI SINI
+            if (slot == null)
+            {
+                continue;
+            }
+
             Debug.Log($"Checking slot {slotTransform.GetSiblingIndex()}");
 
-            if (slot.currentItem == null)
+            if (slot.currentItem == null && slotTransform.childCount > 0)
             {
-                Debug.LogWarning("currentItem is NULL but maybe visually ada?");
+                slot.currentItem = slotTransform.GetChild(0).gameObject;
+                Debug.LogWarning("Recovered currentItem from child");
             }
 
             if (slot.currentItem != null)
@@ -65,6 +70,7 @@ public class inventoryController : MonoBehaviour
     public void SetInventoryItems(List<InventorySaveData> invData)
     {
         Debug.Log("=== LOADING INVENTORY ===");
+
 
         if (invData == null)
         {

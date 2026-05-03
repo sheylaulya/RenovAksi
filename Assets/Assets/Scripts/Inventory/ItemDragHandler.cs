@@ -1,17 +1,33 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     Transform originalParent;
     CanvasGroup canvasGroup;
+    private bool isDragging = false;
 
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
     }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (isDragging) return; // 🚫 cegah klik saat drag
+
+        Item item = GetComponent<Item>();
+
+        if (item == null) return;
+
+        ItemUIController ui = FindAnyObjectByType<ItemUIController>();
+
+        ui?.ShowItem(item);
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
+        isDragging = true;
+
         originalParent = transform.parent;
         transform.SetParent(transform.root);
         canvasGroup.blocksRaycasts = false;
@@ -25,6 +41,8 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        isDragging = false;
+
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
 

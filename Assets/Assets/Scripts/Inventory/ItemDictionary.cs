@@ -12,27 +12,34 @@ public class ItemDictionary : MonoBehaviour
 
         itemDict = new Dictionary<int, GameObject>();
 
-        for (int i = 0; i < itemPrefabs.Count; i++)
+        foreach (var item in itemPrefabs)
         {
-            if (itemPrefabs[i] != null)
-            {
-                // ⚠️ sementara biarin, nanti bisa dihapus kalau udah stabil
-                itemPrefabs[i].ID = i + 1;
-
-                Debug.Log($"Register Item: {itemPrefabs[i].name} with ID {itemPrefabs[i].ID}");
-            }
-            else
-            {
-                Debug.LogWarning($"Item prefab index {i} is NULL");
-            }
+            Debug.Log($"REGISTER: {item.name} → ID {item.ID}");
         }
 
         foreach (Item item in itemPrefabs)
         {
-            if (item != null)
+            if (item == null)
             {
-                itemDict[item.ID] = item.gameObject;
+                Debug.LogWarning("Item prefab NULL");
+                continue;
             }
+
+            if (item.ID == 0)
+            {
+                Debug.LogError($"Item {item.name} has ID 0! Set ID in Inspector!");
+                continue;
+            }
+
+            if (itemDict.ContainsKey(item.ID))
+            {
+                Debug.LogError($"DUPLICATE ID: {item.ID} on {item.name}");
+                continue;
+            }
+
+            itemDict.Add(item.ID, item.gameObject);
+
+            Debug.Log($"Registered Item: {item.name} with ID {item.ID}");
         }
 
         Debug.Log($"ItemDictionary initialized with {itemDict.Count} items");
@@ -55,6 +62,7 @@ public class ItemDictionary : MonoBehaviour
         else
         {
             Debug.Log($"Item with ID {itemId} loaded: {prefab.name}");
+
         }
 
         return prefab;

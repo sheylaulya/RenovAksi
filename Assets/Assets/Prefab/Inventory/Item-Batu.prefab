@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1235104881421798554
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8823071640658639597, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: ID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8823071640658639597, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: itemName
+      value: Batu
+      objectReference: {fileID: 0}
+    - target: {fileID: -8823071640658639597, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: description
+      value: Batu kali yang berat dan stabil. Digunakan sebagai fondasi utama untuk
+        memperkuat dinding rumah atau membangun pemecah gelombang sederhana di area
+        pantai.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899125390272664480, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -536397401185643777, guid: df57e9b8a81a856498c0c66306c31468, type: 3}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 79.0141
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 65.936
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000005722
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089901879300364947, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786013436588412711, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
+      propertyPath: m_Name
+      value: Item-Batu
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f200b39b7cdec469c95181ee38ea23, type: 3}
