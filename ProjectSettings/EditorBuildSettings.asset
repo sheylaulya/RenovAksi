@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: cb870837158ce1048b8adfb263eb5b2f
+  - enabled: 1
+    path: Assets/Scenes/Fishing.unity
+    guid: 8015c0a1d9341cf41b31cc4e6c892879
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d114f31ddd4907647aeac472eb3dbb8b, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
