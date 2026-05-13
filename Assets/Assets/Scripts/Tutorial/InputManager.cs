@@ -17,7 +17,8 @@ public class InputManager : MonoBehaviour
     }
     public void LockAllInput()
     {
-        inputLocked = true;
+        // inputLocked = true;
+        inputLocked = false;
     }
 
 

@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 1f1c1fc42e17d244eba1ec889d0084d3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7866557605431357320
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_0
+  - first:
+      213: 2649314831488430376
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_1
+  - first:
+      213: -356970113278586175
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_2
+  - first:
+      213: -7109501263042460961
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_3
+  - first:
+      213: 2843501656931068749
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_4
+  - first:
+      213: 5933404276035235568
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_5
+  - first:
+      213: 4255731730035720264
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_6
+  - first:
+      213: 1501247208339036027
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_7
+  - first:
+      213: 4418042722306342017
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_8
+  - first:
+      213: -878067377782104393
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_9
+  - first:
+      213: -4513615383387729113
+    second: FINAL JUDUL GAMEE INSYAALLAH SUKSES_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 359, y: 235, z: 371, w: 135}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_0
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 320
+        width: 357
+        height: 602
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870dd13698f54d290800000000000000
+      internalID: -7866557605431357320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_1
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 675
+        width: 97
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821ba057dc144c420800000000000000
+      internalID: 2649314831488430376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 381
+        width: 211
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c25992c299cb0bf0800000000000000
+      internalID: -356970113278586175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_3
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 373
+        width: 92
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2c92ed44af55d90800000000000000
+      internalID: -7109501263042460961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_4
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 380
+        width: 107
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b6c9301b5267720800000000000000
+      internalID: 2843501656931068749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_5
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 382
+        width: 73
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe2dd5a0cfa75250800000000000000
+      internalID: 5933404276035235568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_6
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 392
+        width: 133
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840432ce5756f0b30800000000000000
+      internalID: 4255731730035720264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_7
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 386
+        width: 89
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77581dc16085d410800000000000000
+      internalID: 1501247208339036027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_8
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 382
+        width: 94
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18cb199b27a005d30800000000000000
+      internalID: 4418042722306342017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_9
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 379
+        width: 89
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be50724f5a70d3f0800000000000000
+      internalID: -878067377782104393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL JUDUL GAMEE INSYAALLAH SUKSES_10
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 273
+        width: 537
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7239f6419ba6c51c0800000000000000
+      internalID: -4513615383387729113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_0: -7866557605431357320
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_1: 2649314831488430376
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_10: -4513615383387729113
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_2: -356970113278586175
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_3: -7109501263042460961
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_4: 2843501656931068749
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_5: 5933404276035235568
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_6: 4255731730035720264
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_7: 1501247208339036027
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_8: 4418042722306342017
+      FINAL JUDUL GAMEE INSYAALLAH SUKSES_9: -878067377782104393
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

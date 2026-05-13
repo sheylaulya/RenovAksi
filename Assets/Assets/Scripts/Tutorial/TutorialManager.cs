@@ -22,7 +22,7 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-        StartTutorial(movementTutorial);
+        // StartTutorial(movementTutorial);
     }
 
     public void StartTutorial(TutorialData tutorial)

@@ -34,8 +34,10 @@ public class DayTimeCycle : MonoBehaviour
     [Header("Sky Group")]
     public Transform daySky;
     public Transform daySky2;
+    public Transform daySky3;
     public Transform nightSky;
     public Transform nightSky2;
+    public Transform nightSky3;
 
     void Start()
     {
@@ -172,6 +174,17 @@ public class DayTimeCycle : MonoBehaviour
             }
         }
 
+        foreach (Transform child in daySky3)
+        {
+            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                Color c = sr.color;
+                c.a = dayFactor;
+                sr.color = c;
+            }
+        }
+
         // Night Sky Fade Out
         foreach (Transform child in nightSky)
         {
@@ -184,6 +197,16 @@ public class DayTimeCycle : MonoBehaviour
             }
         }
         foreach (Transform child in nightSky2)
+        {
+            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                Color c = sr.color;
+                c.a = 1f - dayFactor;
+                sr.color = c;
+            }
+        }
+        foreach (Transform child in nightSky3)
         {
             SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
             if (sr != null)
