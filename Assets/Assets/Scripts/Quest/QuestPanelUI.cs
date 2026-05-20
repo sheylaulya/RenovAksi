@@ -8,6 +8,7 @@ public class QuestPanelUI : MonoBehaviour
 
     [Header("Panel")]
     public GameObject panel;
+    public GameObject quizPanel;
 
     [Header("Text")]
     public TextMeshProUGUI questTitle;
@@ -18,6 +19,7 @@ public class QuestPanelUI : MonoBehaviour
 
     QuestData questData;
     public QuestPrize questPrize;
+    public EnvironmentSystem environmentSystem;
 
     void Awake()
     {
@@ -54,15 +56,28 @@ public class QuestPanelUI : MonoBehaviour
         panel.SetActive(false);
     }
 
+    public void Questcomplete(QuestData questData)
+    {
+        QuestManager.instance.CompleteQuest(questData);
+
+        environmentSystem.ApplyQuestImpact(questData);
+
+        ShowQuest(questData);
+
+        successMarkButton.gameObject.SetActive(true);
+        actionButton.gameObject.SetActive(false);
+    }
+
     public void OnActionButtonClicked()
     {
         Debug.Log("Quest Completed: " + questTitle.text);
 
-        HideQuest();
+
 
         if (questData.npcName == "Bu Dita")
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Quiz");
+            quizPanel.SetActive(true);
+            panel.SetActive(false);
         }
     }
 
@@ -95,6 +110,6 @@ public class QuestPanelUI : MonoBehaviour
     public void OnSuccessMarkButtonClicked()
     {
         questPrize.GiveReward(questData);
-        panel.SetActive(false);
+        HideQuest();
     }
 }

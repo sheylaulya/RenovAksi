@@ -19,6 +19,8 @@ MonoBehaviour:
   npcName: Bu Dita
   isCollectible: 0
   impact:
-    environment: 0
-    social: 20
+    environment: 10
     quality: 1
+  trustRewards:
+  - npcName: Bu Dita
+    amount: 5

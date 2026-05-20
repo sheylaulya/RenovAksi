@@ -3,6 +3,7 @@ using UnityEngine;
 public class TrustTester : MonoBehaviour
 {
     public NpcTrustManagers trustManager;
+    public EnvironmentSystem environmentSystem;
 
     void Update()
     {
@@ -16,6 +17,11 @@ public class TrustTester : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             trustManager.RemoveTrust("Bu Lastri", 10f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            environmentSystem.UpdateEnvironmentDaily();
         }
     }
 }

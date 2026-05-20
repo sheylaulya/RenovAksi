@@ -9,6 +9,7 @@ using System.IO;
 public class DayTimeCycle : MonoBehaviour
 {
     public WaterSystem waterSystem;
+    public EnvironmentSystem environmentSystem;
 
     [Header("UI")]
     public TextMeshProUGUI timeDisplay;
@@ -99,7 +100,6 @@ public class DayTimeCycle : MonoBehaviour
             mins = 0;
             hours += 1;
         }
-
         if (hours >= 24)
         {
             hours = 0;
@@ -107,6 +107,9 @@ public class DayTimeCycle : MonoBehaviour
 
             if (waterSystem != null)
                 waterSystem.UpdateWaterDaily(this);
+
+            if (environmentSystem != null)
+                environmentSystem.UpdateEnvironmentDaily();
         }
 
         ControlPPV();

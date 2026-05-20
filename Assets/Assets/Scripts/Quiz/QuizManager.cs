@@ -9,6 +9,7 @@ public class QuizManager : MonoBehaviour
     public QuizAPI api;
 
     [Header("UI")]
+    public GameObject quizPanel;
     public TMP_Text questionText;
     public Button resetButton;
     public GameObject actionButton;
@@ -24,6 +25,7 @@ public class QuizManager : MonoBehaviour
     private int score = 0;
     private int jumlahBenar = 0;
     private int jumlahSalah = 0;
+    public QuestPanelUI questPanelUI;
 
     private void Start()
     {
@@ -113,12 +115,15 @@ public class QuizManager : MonoBehaviour
 
     public void BackToMainGame()
     {
-        if (currentQuest != null)
-        {
-            Debug.Log("Menyelesaikan quest: " + currentQuest.questName);
-            QuestManager.instance.CompleteQuest(currentQuest);
-        }
+        // if (currentQuest != null)
+        // {
+        //     Debug.Log("Menyelesaikan quest: " + currentQuest.questName);
+        //     QuestManager.instance.CompleteQuest(currentQuest);
+        // }
+        questPanelUI.Questcomplete(currentQuest);
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Game");
+        quizPanel.SetActive(false);
+        // questPanelUI.OnSuccessMarkButtonClicked();
+
     }
 }
