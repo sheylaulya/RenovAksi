@@ -14,8 +14,8 @@ public class WaterSystem : MonoBehaviour
 
     void Update()
     {
-        float wave = Mathf.Sin(Time.time * 0.2f);
-        Value = Mathf.Lerp(40f, 80f, (wave + 1f) / 2f);
+        // float wave = Mathf.Sin(Time.time * 0.2f);
+        // Value = Mathf.Lerp(40f, 80f, (wave + 1f) / 2f);
     }
 
 

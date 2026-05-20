@@ -42,12 +42,24 @@ public class QuestManager : MonoBehaviour
         return GetQuest(data).state;
     }
 
+    void SaveGameState()
+    {
+        SaveController save = FindObjectOfType<SaveController>();
+
+        if (save != null)
+        {
+            save.SaveGame();
+
+            Debug.Log("Quest state disimpan");
+        }
+    }
+
     public void AcceptQuest(QuestData data)
     {
         var quest = GetQuest(data);
         quest.state = QuestState.InProgress;
         Debug.Log("Quest Accepted: " + data.questID + " - " + data.questName);
-
+        SaveGameState();
     }
 
     public void DeclineQuest(QuestData data)
@@ -55,6 +67,7 @@ public class QuestManager : MonoBehaviour
         var quest = GetQuest(data);
         quest.state = QuestState.Declined;
         Debug.Log("Quest Declined: " + data.questID + " - " + data.questName);
+        SaveGameState();
     }
 
     public void CompleteQuest(QuestData data)
@@ -70,10 +83,7 @@ public class QuestManager : MonoBehaviour
             QuestPanelUI.instance.HideQuest();
         }
 
-        if (IndexManager.instance != null)
-        {
-            // IndexManager.instance.social.AddTrust("Warga", data.impact.social);
-        }
+        SaveGameState();
     }
 
     public void ShowQuestPanel(QuestData data)

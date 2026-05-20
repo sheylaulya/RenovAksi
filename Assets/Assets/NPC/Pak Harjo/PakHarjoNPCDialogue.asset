@@ -33,7 +33,7 @@ MonoBehaviour:
     choices:
     - Betul pak, perkenalkan saya Rizal
     nextDialogueIndexes: 01000000
-    choiceTypes: 00000000
+    choiceTypes: 04000000
   - dialogueIndex: 2
     choices:
     - Maksudnya Pak?

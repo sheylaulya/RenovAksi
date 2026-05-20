@@ -9252,6 +9252,7 @@ Transform:
   - {fileID: 714671888}
   - {fileID: 1915751788}
   - {fileID: 910388107}
+  - {fileID: 680837260}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &398107399
@@ -12106,7 +12107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73995d9c68bb98743a527e6d07c38e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groups: []
+  npcManager: {fileID: 859168815}
   Value: 0
 --- !u!1 &600036862
 GameObject:
@@ -13598,6 +13599,51 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &680837259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680837260}
+  - component: {fileID: 680837261}
+  m_Layer: 0
+  m_Name: AddDummyTrust
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &680837260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680837259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 395912693}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &680837261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680837259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf776824b143914c9a7a8332bdb4026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trustManager: {fileID: 859168815}
 --- !u!1 &680985059
 GameObject:
   m_ObjectHideFlags: 0
@@ -17879,6 +17925,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90050eeb688ad704ba3622b436398180, type: 2}
   - {fileID: 11400000, guid: 6573ec10565863845b893b7647d083d8, type: 2}
   - {fileID: 11400000, guid: e873dc0393111864b83593d064f3fd4b, type: 2}
+  socialSystem: {fileID: 581967086}
 --- !u!1 &862730638
 GameObject:
   m_ObjectHideFlags: 0

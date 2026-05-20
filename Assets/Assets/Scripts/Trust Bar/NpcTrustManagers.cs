@@ -26,25 +26,29 @@ public class NpcTrustManagers : MonoBehaviour
         return npcRuntimes.Find(npc => npc.data.npcName == npcName);
     }
 
+    public SocialSystem socialSystem;
+
     public void AddTrust(string npcName, float amount)
     {
         var npc = GetNPC(npcName);
+
         if (npc != null)
         {
             npc.AddTrust(amount);
+
+            socialSystem.UpdateIndex();
         }
     }
 
     public void RemoveTrust(string npcName, float amount)
     {
         var npc = GetNPC(npcName);
+
         if (npc != null)
         {
             npc.RemoveTrust(amount);
-        }
-        else
-        {
-            Debug.LogWarning("NPC dengan nama " + npcName + " tidak ditemukan!");
+
+            socialSystem.UpdateIndex();
         }
     }
 }
