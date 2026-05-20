@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa60d7d1fb35634cb91179be98a047c, type: 3}
+  m_Name: NPC_Bu Dita
+  m_EditorClassIdentifier: 
+  npcName: Bu Dita
+  age: 22
+  job: Guru SD
+  homeTag: Rumah_Bu_Dita
+  schedule:
+  - startHour: 7
+    endHour: 14
+    locationTag: Sekolah
+    activityLabel: Mengajar di Sekolah
+  - startHour: 14
+    endHour: 15
+    locationTag: Rumah_Bu_Dita
+    activityLabel: Istirahat siang
+  - startHour: 15
+    endHour: 17
+    locationTag: Papan_Informasi
+    activityLabel: Membaca berita
+  - startHour: 17
+    endHour: 6
+    locationTag: Rumah_Bu_Dita
+    activityLabel: Beristirahat
+  isNightPatrol: 0

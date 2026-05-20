@@ -6,8 +6,21 @@ TagManager:
   tags:
   - orange portal
   - blue portal
-  - FIsh
+  - Sekolah
+  - Rumah_Bu_Dita
+  - Rumah_Mbah_Tarjo
+  - Rumah_Bu_Lastri
+  - Papan_Informasi
+  - Balai_Desa
   - Fish
+  - Rumah_Pak_Harjo
+  - Asrama
+  - Masjid
+  - Rumah_Mas_Budi
+  - Rumah_Pak_Karso
+  - Pemancingan
+  - Bangunan_Terbengkalai
+  - Warung_Sembako_1
   layers:
   - Default
   - TransparentFX

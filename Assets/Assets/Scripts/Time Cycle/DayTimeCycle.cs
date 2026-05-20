@@ -5,9 +5,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering;
 using System.IO;
+using System;
 
 public class DayTimeCycle : MonoBehaviour
 {
+    public static DayTimeCycle Instance { get; private set; }
+    public static event Action<int> OnHourChanged;
+    private int _lastHour = -1;
     public WaterSystem waterSystem;
     public EnvironmentSystem environmentSystem;
 
@@ -40,7 +44,11 @@ public class DayTimeCycle : MonoBehaviour
     public Transform nightSky;
     public Transform nightSky2;
     public Transform nightSky3;
-
+    void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+    }
     void Start()
     {
         ppv = GetComponent<Volume>();
@@ -53,6 +61,7 @@ public class DayTimeCycle : MonoBehaviour
             hours = startHour;
             mins = startMinute;
             seconds = 0;
+            _lastHour = hours;
         }
 
         ControlPPV();
@@ -110,6 +119,11 @@ public class DayTimeCycle : MonoBehaviour
 
             if (environmentSystem != null)
                 environmentSystem.UpdateEnvironmentDaily();
+        }
+        if (hours != _lastHour)
+        {
+            _lastHour = hours;
+            OnHourChanged?.Invoke(hours);
         }
 
         ControlPPV();
@@ -297,4 +311,10 @@ public class DayTimeCycle : MonoBehaviour
     {
         SetTimeSpeed(400f);
     }
+
+    public bool IsNightCurfew() => hours >= 20 || hours < 5;
+
+    public bool IsPrayerTime() =>
+        hours == 5 || hours == 12 ||
+        hours == 15 || hours == 18 || hours == 19;
 }

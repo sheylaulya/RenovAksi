@@ -25,8 +25,7 @@ public class NPC : MonoBehaviour, Iinteractable
 
         CheckQuestState();
     }
-
-    void CheckQuestState()
+    public bool IsDialogueActive() => isDialogueActive; void CheckQuestState()
     {
         if (!givesQuest || questData == null) return;
 
@@ -68,6 +67,9 @@ public class NPC : MonoBehaviour, Iinteractable
 
     public bool CanInteract()
     {
+        var brain = GetComponent<NPCBrain>();
+        if (brain != null && brain.IsSleeping()) return false;
+
         if (isDialogueActive) return false;
 
         // Jika NPC tidak punya dialog
@@ -297,17 +299,6 @@ public class NPC : MonoBehaviour, Iinteractable
                 QuestManager.instance.DeclineQuest(questData);
         }
 
-        // if (IndexManager.instance != null)
-        // {
-        //     if (type == ChoiceType.GoodAction)
-        //     {
-        //         IndexManager.instance.social.socialValue += 5f;
-        //     }
-        //     else if (type == ChoiceType.BadAction)
-        //     {
-        //         IndexManager.instance.social.socialValue -= 5f;
-        //     }
-        // }
 
         dialogUI.SetPlayerInfo();
         dialogUI.SetDialogueText(GetChoiceText(nextIndex));
