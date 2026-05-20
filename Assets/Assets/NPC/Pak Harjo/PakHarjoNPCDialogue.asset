@@ -13,20 +13,35 @@ MonoBehaviour:
   m_Name: PakHarjoNPCDialogue
   m_EditorClassIdentifier: 
   npcName: Pak Harjo
-  npcPotrait: {fileID: -7533783761039728747, guid: 03fb7212ef219804cb74b835a3764d69, type: 3}
+  npcTitleName: Si Kepala Desa
+  npcPotrait: {fileID: 3465286685962602723, guid: 19d86b447cb98b94da7e1ce96e6e6689, type: 3}
   dialogueLines:
-  - Hai nak, lagi sibuk?
-  - Oh yasudah kalo gitu, lain kali saja
-  - kalo kamu free ke rumah saya ya nak
-  - Tolong bantu saya ya angkat cart buah
-  - Cartnya ada di pintu masuk desa, ambil saja ya
-  autoProgressLines: 0101000100
-  endDialogueLines: 0000010001
+  - Oh, kamu mahasiswa KKN yang tadi dikabarin itu ya?
+  - Selamat datang di desa kami. Maaf kalau jalannya tadi agak susah dilalui
+  - Kalau mau bantu warga disini, jangan langsung kerja dulu
+  - Kenal dulu sama orang-orang di sini. Dengar cerita mereka.
+  - Coba ngobrol sama dua warga dulu. Biar kamu tahu desa ini dari sudut pandang
+    mereka
+  - Kalau sudah, nanti kita lanjut ngobrol
+  - yasudah kalo gitu, datangi saya lagi kalo kamu sudah siap
+  autoProgressLines: 01010001000000
+  endDialogueLines: 00000000000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   choices:
   - dialogueIndex: 0
     choices:
-    - Lumayan sih pak..
-    - Engga pak. kenapa?
-    nextDialogueIndexes: 0100000003000000
+    - Betul pak, perkenalkan saya Rizal
+    nextDialogueIndexes: 01000000
+    choiceTypes: 00000000
+  - dialogueIndex: 2
+    choices:
+    - Maksudnya Pak?
+    nextDialogueIndexes: 03000000
+    choiceTypes: 00000000
+  - dialogueIndex: 4
+    choices:
+    - Baik Pak, saya coba keliling dulu.
+    - Mungkin lain kali pak, saya agak malu..
+    nextDialogueIndexes: 0500000006000000
+    choiceTypes: 0100000002000000

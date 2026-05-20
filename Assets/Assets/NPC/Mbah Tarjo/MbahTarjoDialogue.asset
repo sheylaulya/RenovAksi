@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ae20b5334d8b840968419b835aad7b, type: 3}
+  m_Name: MbahTarjoDialogue
+  m_EditorClassIdentifier: 
+  npcName: Mbah Tarjo
+  npcTitleName: Si Petuah Desa
+  npcPotrait: {fileID: 7028616704906629411, guid: de48eb10c84473541b9d3a1e6e524966, type: 3}
+  dialogueLines:
+  - Masjid ini masih berdiri bagus ya
+  - Mbah sudah lihat banyak yang lain hilang pelan-pelan
+  - Semoga aja masjid ini engga ikut hilang..
+  - Ngomong ngomong lagi muter desa, Nak?
+  - Bagus, desa ini beda kalau dilihat sekarang sama dulu.
+  - Dulu daerah sini rame.
+  - Iya, sekarang mah yang rajin datang malah air.
+  - Nikmatin dulu aja nggak semua hal lama-lama tetap sama.
+  autoProgressLines: 0101010101010101
+  endDialogueLines: 0000000000000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  choices:
+  - dialogueIndex: 0
+    choices:
+    - Iya Mbah, emangnya kenapa?
+    nextDialogueIndexes: 01000000
+    choiceTypes: 00000000
+  - dialogueIndex: 3
+    choices:
+    - Iya Mbah, sekalian lihat-lihat
+    nextDialogueIndexes: 04000000
+    choiceTypes: 00000000

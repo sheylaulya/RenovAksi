@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ae20b5334d8b840968419b835aad7b, type: 3}
+  m_Name: PakKarsoDialogue
+  m_EditorClassIdentifier: 
+  npcName: Pak Karso
+  npcTitleName: Si Petambak Desa
+  npcPotrait: {fileID: 4130640169021434097, guid: 5a269bf42c0520b44a92bbf4fc08eed8, type: 3}
+  dialogueLines:
+  - Eh, mau ke mana? Hati-hati, jalannya licin
+  - Haduh haduh lihat tuh, airnya naik lagi.
+  - Bibit, pakan, perbaikan... uang keluar terus, masuknya nggak jelas.
+  - Anak saya maunya kuliah di luar, nggak mau ngurus tambak katanya.
+  - Kalau memang harus pindah, saya cuma pengen hidup jangan makin susah
+  autoProgressLines: 0001010101
+  endDialogueLines: 0000000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  choices:
+  - dialogueIndex: 0
+    choices:
+    - Mau keliling desa aja pak
+    nextDialogueIndexes: 01000000
+    choiceTypes: 00000000

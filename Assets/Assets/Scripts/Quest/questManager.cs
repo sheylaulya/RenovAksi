@@ -47,6 +47,7 @@ public class QuestManager : MonoBehaviour
         var quest = GetQuest(data);
         quest.state = QuestState.InProgress;
         Debug.Log("Quest Accepted: " + data.questID + " - " + data.questName);
+
     }
 
     public void DeclineQuest(QuestData data)
@@ -59,13 +60,27 @@ public class QuestManager : MonoBehaviour
     public void CompleteQuest(QuestData data)
     {
         var quest = GetQuest(data);
+
         quest.state = QuestState.Completed;
+
         Debug.Log("Quest Completed: " + data.questName);
-        Debug.Log($"Quest {quest.data.questName} impact: {quest.data.impact.environment}");
+
+        if (QuestPanelUI.instance != null)
+        {
+            QuestPanelUI.instance.HideQuest();
+        }
+
         if (IndexManager.instance != null)
         {
+            // IndexManager.instance.social.AddTrust("Warga", data.impact.social);
+        }
+    }
 
-            IndexManager.instance.social.AddTrust("Warga", data.impact.social);
+    public void ShowQuestPanel(QuestData data)
+    {
+        if (QuestPanelUI.instance != null)
+        {
+            QuestPanelUI.instance.ShowQuest(data);
         }
     }
 

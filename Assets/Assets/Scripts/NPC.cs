@@ -7,14 +7,15 @@ public class NPC : MonoBehaviour, Iinteractable
     public QuestData questData;
 
     public NPCDialogue startDialogueData;
-    public NPCDialogue inProgressDialogueData;
-    public NPCDialogue completedDialogueData;
+
+
 
     private NPCDialogue dialogueData;
     private DialogueController dialogUI;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
+    private bool hasFinishedDialogue = false;
     private Collider npcCollider;
 
     void Start()
@@ -69,13 +70,30 @@ public class NPC : MonoBehaviour, Iinteractable
     {
         if (isDialogueActive) return false;
 
+        // Jika NPC tidak punya dialog
+        if (startDialogueData == null ||
+            startDialogueData.dialogueLines == null ||
+            startDialogueData.dialogueLines.Length == 0)
+        {
+            return false;
+        }
+
+        // Untuk NPC non-quest: kalau dialog sudah selesai, tidak bisa lagi
+        if (!givesQuest && hasFinishedDialogue)
+        {
+            return false;
+        }
+
+        // Untuk NPC quest
         if (givesQuest && questData != null)
         {
             var state = QuestManager.instance.GetQuestState(questData);
 
-            // ❌ gak bisa interact kalau udah accept
-            if (state == QuestState.InProgress || state == QuestState.Completed)
+            if (state == QuestState.InProgress ||
+                state == QuestState.Completed)
+            {
                 return false;
+            }
         }
 
         return true;
@@ -334,10 +352,35 @@ public class NPC : MonoBehaviour, Iinteractable
     {
         StopAllCoroutines();
         isDialogueActive = false;
+
         dialogUI.SetDialogueText("");
         dialogUI.showDialogueUI(false);
 
         dialogUI.SetPreviewButton(false);
         dialogUI.questPreviewPanel.SetActive(false);
+
+        // Jika NPC bukan quest, tandai sudah selesai
+        if (!givesQuest)
+        {
+            hasFinishedDialogue = true;
+
+            // Optional: matikan collider langsung
+            if (npcCollider != null)
+            {
+                npcCollider.enabled = false;
+            }
+        }
+
+
+        // Register NPC ke quest berkenalan
+        if (BerkenalanQuest.instance != null)
+        {
+            BerkenalanQuest.instance.RegisterConversation(
+                dialogueData.npcName
+            );
+        }
+
+        if (givesQuest && questData != null)
+            QuestManager.instance.ShowQuestPanel(questData);
     }
 }

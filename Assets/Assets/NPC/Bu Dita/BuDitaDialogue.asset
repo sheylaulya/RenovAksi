@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ae20b5334d8b840968419b835aad7b, type: 3}
+  m_Name: BuDitaDialogue
+  m_EditorClassIdentifier: 
+  npcName: Bu Dita
+  npcTitleName: Bu Guru Desa
+  npcPotrait: {fileID: -5099292496197868168, guid: 1e25645a38a899140ac8d2bb42f2c9be, type: 3}
+  dialogueLines:
+  - Nak, sebentar. Ibu sedang butuh bantuan
+  - Ibu sedang mempersiapkan sesuatu untuk kegiatan belajar hari ini.
+  - Sebelum semuanya digunakan, Ibu ingin memastikan semuanya berjalan dengan baik
+  - Ibu rasa kamu orang yang tepat untuk membantu..
+  - Bagus. Kalau begitu, kita mulai sekarang ya
+  - Ya sudah kalau begitu lain kali saja ya
+  autoProgressLines: 0101010100
+  endDialogueLines: 0000000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  choices:
+  - dialogueIndex: 0
+    choices:
+    - Ada apa, Bu?
+    - Maaf bu, saya sedang sibuk
+    nextDialogueIndexes: 0100000005000000
+    choiceTypes: 0400000005000000
+  - dialogueIndex: 3
+    choices:
+    - Saya bisa bu
+    - Mungkin lain kali ya bu
+    nextDialogueIndexes: 0400000005000000
+    choiceTypes: 0100000002000000

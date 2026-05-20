@@ -15,17 +15,17 @@ public class IndexUI : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("IndexUI jalan");
+        // Debug.Log("IndexUI jalan");
 
         if (IndexManager.instance == null)
         {
-            Debug.Log("IndexManager NULL");
+            // Debug.Log("IndexManager NULL");
             return;
         }
 
 
         waterBar.value += Time.deltaTime * 50f;
-        Debug.Log("Water Value: " + IndexManager.instance.water.Value);
+        // Debug.Log("Water Value: " + IndexManager.instance.water.Value);
 
         if (IndexManager.instance == null) return;
 

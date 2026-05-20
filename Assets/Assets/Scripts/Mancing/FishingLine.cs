@@ -22,7 +22,7 @@ public class FishingLine : MonoBehaviour
 
     [Header("Line Appearance")]
     public float lineWidth = 0.04f;
-    public Color lineColor = new Color(0.9f, 0.85f, 0.55f);
+    public Color lineColor = Color.black;
 
     [Header("Sag")]
     [Range(0f, 1f)] public float sagAmount = 0.15f;
@@ -95,7 +95,7 @@ public class FishingLine : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         if (rodTip == null) return;
-        Gizmos.color = Color.cyan;
+        Gizmos.color = Color.black;
         Gizmos.DrawLine(rodTip.position, transform.position);
         Gizmos.DrawSphere(rodTip.position, 0.08f);
     }

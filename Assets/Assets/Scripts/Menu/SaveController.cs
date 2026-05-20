@@ -7,6 +7,22 @@ public class SaveController : MonoBehaviour
 {
     private string saveLocation;
     private inventoryController inventoryController;
+    public int lastFishingResult;
+    public static SaveController instance;
+    private DayTimeCycle dayTimeCycle;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     IEnumerator Start()
     {
@@ -20,7 +36,9 @@ public class SaveController : MonoBehaviour
             Debug.LogError("inventoryController NOT FOUND!");
         }
 
-        yield return null; // 🔥 IMPORTANT: tunggu semua Awake & Start selesai
+        dayTimeCycle = FindAnyObjectByType<DayTimeCycle>();
+
+        yield return null;
 
         LoadGame();
     }
@@ -33,7 +51,20 @@ public class SaveController : MonoBehaviour
         {
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
             quests = QuestManager.instance.GetSaveData(),
-            inventorySaveDatas = inventoryController.GetInventoryItems()
+            inventorySaveDatas = inventoryController.GetInventoryItems(),
+
+            mancingSaveData = FishingGameManager.instance != null
+                ? FishingGameManager.instance.GetSaveData()
+                : new MancingSaveData(),
+
+            // Simpan waktu
+            timeData = new TimeSaveData()
+            {
+                hours = dayTimeCycle.hours,
+                mins = dayTimeCycle.mins,
+                days = dayTimeCycle.days,
+                tick = dayTimeCycle.tick
+            }
         };
 
         string json = JsonUtility.ToJson(data, true);
@@ -45,6 +76,29 @@ public class SaveController : MonoBehaviour
         Debug.Log("GAME SAVED SUCCESSFULLY");
     }
 
+    public void SaveFishingResult()
+    {
+        SaveData data;
+
+        if (File.Exists(saveLocation))
+        {
+            string json = File.ReadAllText(saveLocation);
+            data = JsonUtility.FromJson<SaveData>(json);
+        }
+        else
+        {
+            data = new SaveData();
+        }
+
+        data.mancingSaveData =
+            FishingGameManager.instance.GetSaveData();
+
+        File.WriteAllText(
+            saveLocation,
+            JsonUtility.ToJson(data, true)
+        );
+    }
+
     public void LoadGame()
     {
         Debug.Log("=== LOAD GAME CALLED ===");
@@ -52,15 +106,25 @@ public class SaveController : MonoBehaviour
         if (File.Exists(saveLocation))
         {
             string json = File.ReadAllText(saveLocation);
-            Debug.Log("LOADED JSON:\n" + json);
 
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            GameObject.FindGameObjectWithTag("Player").transform.position = data.playerPosition;
+            GameObject.FindGameObjectWithTag("Player").transform.position =
+                data.playerPosition;
 
             QuestManager.instance.LoadFromSaveData(data.quests);
 
             inventoryController.SetInventoryItems(data.inventorySaveDatas);
+
+            lastFishingResult =
+                data.mancingSaveData.lastFishingResult;
+
+            if (FishingGameManager.instance != null)
+            {
+                FishingGameManager.instance.LoadFromSaveData(data.mancingSaveData);
+            }
+
+            dayTimeCycle.LoadTime(data.timeData);
         }
         else
         {

@@ -35,7 +35,13 @@ public class FishingGameManager : MonoBehaviour
     public TMP_Text finalScoreText;
 
     // ── Internal ─────────────────────────────────────────────────────────────
-    private int score = 0;
+
+    // Skor sesi game sekarang
+    public int score = 0;
+
+    // Data permanen yang disimpan
+    public int totalFishCaught = 0;
+    public int lastFishingResult;
     private float timer;
     private bool gameEnded = false;
 
@@ -52,6 +58,7 @@ public class FishingGameManager : MonoBehaviour
 
     void Start()
     {
+        score = 0;
         timer = gameDuration;
 
         // Sembunyikan game end panel
@@ -96,7 +103,7 @@ public class FishingGameManager : MonoBehaviour
     void UpdateScoreUI()
     {
         if (scoreText != null)
-            scoreText.text = "Tangkapan: " + score;
+            scoreText.text = "Tangkapan: " + score + " ikan";
     }
 
     void UpdateTimerUI()
@@ -104,9 +111,8 @@ public class FishingGameManager : MonoBehaviour
         if (timerText != null)
         {
             int sisa = Mathf.CeilToInt(timer);
-            timerText.text = sisa.ToString();
+            timerText.text = "Waktu Tersisa : " + sisa.ToString() + " detik";
 
-            // Warnain merah kalau sisa < 10 detik
             if (timerText.TryGetComponent(out TMP_Text tmp))
                 tmp.color = sisa <= 10 ? Color.red : Color.white;
         }
@@ -131,27 +137,38 @@ public class FishingGameManager : MonoBehaviour
         SetReelButtonActive(false);
 
         if (gameEndPanel != null)
-            gameEndPanel.SetActive(true);
+            Time.timeScale = 0f;
+        gameEndPanel.SetActive(true);
 
         if (finalScoreText != null)
         {
-            string grade = GetGrade(score);
             finalScoreText.text =
-                $"Waktu Habis!\n\nIkan Tertangkap: {score}\n\n{grade}";
+                $"Waktu Habis! Ikan Tertangkap: {score} ekor";
         }
     }
 
-    string GetGrade(int s)
+
+    public MancingSaveData GetSaveData()
     {
-        if (s >= 15) return "🏆 Nelayan Legendaris!";
-        if (s >= 10) return "⭐ Nelayan Handal!";
-        if (s >= 5) return "👍 Lumayan Jago!";
-        return "🎣 Pemula - Terus Berlatih!";
+        return new MancingSaveData
+        {
+            lastFishingResult = score
+        };
     }
 
     /// <summary>Assign ke Restart Button di game end panel.</summary>
     public void RestartGame()
     {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Fishing");
+        Time.timeScale = 1f;
+
+    }
+
+    public void LoadFromSaveData(MancingSaveData data)
+    {
+        if (data == null) return;
+
+        // Simpan hasil terakhir ke variabel lain
+        lastFishingResult = data.lastFishingResult;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +9,14 @@ namespace SaveGame.Data
     public class SaveData
     {
         public Vector3 playerPosition;
+
         public List<QuestSaveData> quests = new();
         public bool isTutorialCompleted;
         public List<InventorySaveData> inventorySaveDatas;
+        public MancingSaveData mancingSaveData;
+        // Tambahkan data waktu
+        public TimeSaveData timeData;
+
     }
 }
 

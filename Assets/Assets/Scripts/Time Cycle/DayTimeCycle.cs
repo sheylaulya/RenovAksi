@@ -4,6 +4,7 @@ using UnityEngine;
 
 using TMPro;
 using UnityEngine.Rendering;
+using System.IO;
 
 public class DayTimeCycle : MonoBehaviour
 {
@@ -43,14 +44,34 @@ public class DayTimeCycle : MonoBehaviour
     {
         ppv = GetComponent<Volume>();
 
-        // Set initial time
-        hours = startHour;
-        mins = startMinute;
-        seconds = 0;
+        if (!File.Exists(
+            Path.Combine(
+                Application.persistentDataPath,
+                "saveData.json")))
+        {
+            hours = startHour;
+            mins = startMinute;
+            seconds = 0;
+        }
 
-        // Apply initial state
         ControlPPV();
         DisplayTime();
+        UpdateSpeedUI();
+    }
+
+    public void LoadTime(TimeSaveData data)
+    {
+        hours = data.hours;
+        mins = data.mins;
+        days = data.days;
+        tick = data.tick;
+
+        // jika tick tersimpan 0, pakai default
+        if (tick <= 0)
+            tick = 100f;
+
+        DisplayTime();
+        ControlPPV();
         UpdateSpeedUI();
     }
 

@@ -1,8 +1,30 @@
+using TMPro;
 using UnityEngine;
 
 public class MancingTeleport : MonoBehaviour
 {
     public GameObject mancingTeleportPanel;
+
+    // Data global antar scene
+    public static int mancingResultData;
+    public TMP_Text resultText;
+
+    private bool loaded = false;
+
+    private void Update()
+    {
+
+        // if (!loaded && resultText != null && SaveController.instance != null)
+        // {
+        //     Debug.Log("Loading last fishing result: " + SaveController.instance.lastFishingResult);
+        resultText.text =
+            "Hasil Mancing Terakhir: " +
+            SaveController.instance.lastFishingResult +
+            " ikan";
+
+        loaded = true;
+        // }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,10 +41,8 @@ public class MancingTeleport : MonoBehaviour
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        // Simpan posisi sekarang
         Vector3 originalPos = player.transform.position;
 
-        // Geser sedikit ke kiri untuk data save
         player.transform.position = new Vector3(
             originalPos.x - 2f,
             originalPos.y,
@@ -32,9 +52,6 @@ public class MancingTeleport : MonoBehaviour
         SaveController save = FindObjectOfType<SaveController>();
         save.SaveGame();
 
-        Debug.Log("SAVE DIPANGGIL");
-
-        // Balikin lagi posisi player aslinya
         player.transform.position = originalPos;
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("Fishing");
@@ -42,6 +59,11 @@ public class MancingTeleport : MonoBehaviour
 
     public void TeleportBackToDesa()
     {
+        SaveController save = FindObjectOfType<SaveController>();
+
+        save.SaveFishingResult();
+
+        Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main Game");
     }
 }
